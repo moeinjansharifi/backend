@@ -1,11 +1,11 @@
 import express from "express";
-import BookingControllers from "../controllers/BookingControllers.js";
+import bookingControllers from "../controllers/bookingControllers.js";
 import { protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 router
   .route("/account/booking")
-  .post(protect, BookingControllers.createBooking)
-  .get(protect, BookingControllers.getUserBooking);
+  .post(protect, bookingControllers.createBooking)
+  .get(protect, bookingControllers.getUserBooking);
 
 export default router;
